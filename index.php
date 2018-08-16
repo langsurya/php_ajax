@@ -48,7 +48,13 @@
                         loadData();
                     }
                 });
-            })
+            });
+            $('.updateData').click(function(e){
+                e.preventDefault();
+                $('[name=nama').val($(this).attr('nama'));
+                $('[name=alamat').val($(this).attr('alamat'));
+                $('form').attr('action',$(this).attr('href'));
+            });
         })
     }
 
