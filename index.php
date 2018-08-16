@@ -37,7 +37,18 @@
 
     function loadData(){
         $.get('controller/data.php', function(data){
-            $('#content').html(data)
+            $('#content').html(data);
+            $('.hapusData').click(function(e){
+                e.preventDefault();
+                $.ajax({
+                    type:'get',
+                    url:$(this).attr('href'),
+                    data:$(this).serialize(),
+                    success:function(){
+                        loadData();
+                    }
+                });
+            })
         })
     }
 
