@@ -61,6 +61,7 @@
     function resetForm(){
         $('[type=text').val('');
         $('[name=nama').focus();
+        $('form').attr('action','controller/simpan.php');
     }
     </script>
 </body>
